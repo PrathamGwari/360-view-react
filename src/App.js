@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {Pannellum} from '360-react-pannellum'
+import Hotel1 from './images/hotel2.jpeg'
 
 function App() {
+  const closeAction = ()=> {
+    console.log('360 viewer closed');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Pannellum
+      width='100%'
+      height='100vh'
+      imagePath={Hotel1}
+      isDisplayCloseButton={false}
+      closeHandler={closeAction}
+      closeButtonTitle='Close'
+      showZoomCtrl={false}
+      showFullscreenCtrl={false}
+      autoLoad />
+    </>
   );
 }
 
